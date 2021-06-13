@@ -47,6 +47,7 @@ function getTasks() {
 function addTask(e) {
 	if(taskInput.value === '') {
 		alert('Please add a task!!!');
+		return;
 	}
 	// Create task list
 	const li = document.createElement('li');
