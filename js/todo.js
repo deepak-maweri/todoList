@@ -9,9 +9,6 @@ const taskInput = document.querySelector("#task");
 const speech = new SpeechSynthesisUtterance();
 speech.voice = window.speechSynthesis.getVoices()[0];
 
-speech.text = `Task list cleared successfully, add new tasks!`;
-window.speechSynthesis.speak(speech);
-
 // Loading all event listeners to handle different features and cases
 loadEventListeners();
 
