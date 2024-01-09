@@ -151,7 +151,7 @@ function clearTasks(e) {
   // taskList.innerHTML = '';
 
   let allTasks = document.querySelectorAll(".collection-item");
-  const shouldGiveConfirmation = false;
+  let shouldGiveConfirmation = false;
   if (allTasks?.length > 0) {
     shouldGiveConfirmation = true;
   }
