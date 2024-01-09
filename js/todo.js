@@ -149,6 +149,12 @@ function removeFromLocalStorage(itemToDel) {
  */
 function clearTasks(e) {
   // taskList.innerHTML = '';
+
+  let allTasks = document.querySelectorAll(".collection-item");
+  const shouldGiveConfirmation = false;
+  if (allTasks?.length > 0) {
+    shouldGiveConfirmation = true;
+  }
   while (taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
@@ -156,8 +162,10 @@ function clearTasks(e) {
   clearTasksFromLocalStorage();
 
   // Give confirmation using voice assistance
-  speech.text = `Task list cleared successfully, add new tasks!`;
-  window.speechSynthesis.speak(speech);
+  if (shouldGiveConfirmation) {
+    speech.text = `Task list cleared successfully, add new tasks!`;
+    window.speechSynthesis.speak(speech);
+  }
 }
 
 function clearTasksFromLocalStorage() {
